@@ -8,6 +8,7 @@ require('dotenv').config();
 const authRoutes = require('./routes/auth.routes');
 const productRoutes = require('./routes/product.routes');
 const uploadRoutes = require('./routes/upload.routes');
+const orderRoutes = require('./routes/order.routes');
 
 // Import middleware
 const errorHandler = require('./middleware/error.middleware');
@@ -29,6 +30,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/orders', orderRoutes);
 
 // Error handling middleware
 app.use(errorHandler);
